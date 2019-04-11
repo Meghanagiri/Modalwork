@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Modal</title>
+    <link href="index.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <header class="head">Welcome to the Modal world!...</header>
+    <!--<img src="./flower.jpg" alt="flower" />-->
+    <div class="flex-container">
+      <div class="modal simpleModal-backgroundcolor">
+        <button class="button" onclick="simpleModal()">Modal1</button>
+      </div>
+      <div class="modal inputModal-backgroundcolor">
+        <button class="button" onclick="inputModal()">Modal2</button>
+      </div>
+      <div class="modal loginModal-backgroundcolor">
+        <button class="button" onclick="loginModal()">Modal3</button>
+      </div>
+    </div>
+
+    <div id="mysimpleModal" class="modal1">
+      <div class="modal-content">
+        <button class="close" onclick="simpleModalclose()">
+          &times;
+        </button>
+        <h2>Hellow world!...</h2>
+      </div>
+    </div>
+
+    <div id="myinputModal" class="modal2">
+      <div class="modal-content">
+        <button class="close" onclick="inputModalclose()">
+          &times;
+        </button>
+        <input type="text" placeholder="enter here..." onchange="myFun(this)" />
+        <button class="submit" value=" ">submit</button>
+      </div>
+    </div>
+
+    <div id="myloginModal" class="modal3">
+      <div class="modal-contentform">
+        <button class="close-form" onclick="loginModalclose()">
+          &times;
+        </button>
+        <form method="post" href="#" onsubmit="preventFun()">
+          <div class="formstyle">
+            <h2>SIGN IN</h2>
+            <div class="center">
+              <label for="gmail-id">Gmail-id:</label>
+              <input
+                type="email"
+                name="gmail-id"
+                id="gmail-id"
+                class="gmailpassword-box"
+                onblur="emailValidation(this)"
+              />
+              <span id="emptyEmailerror" class="emailMessage"
+                >please enter email address</span
+              >
+              <span id="invalidEmailerror" class="invalidEmailmessage"
+                >Invalid Email address...</span
+              >
+
+              <label for="password">Password:</label>
+              <input
+                type="password"
+                name="password"
+                id="password"
+                class="gmailpassword-box"
+                onblur="passwordValidation(this)"
+              />
+              <span id="emptyPassworderror" class="passwordMessage"
+                >please enter the password</span
+              >
+              <span id="invalidPassworderror" class="invalidPasswordmessage"
+                >Invalid password...</span
+              >
+            </div>
+
+            <div class="checklogin">
+              <div class="checklogin-align">
+                <input type="checkbox" id="remember" class="check" />
+                <label for="remember">Remember</label><br />
+
+                <button class="login-form" onclick="validate()">
+                  login
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
